@@ -8,7 +8,7 @@ function MyQuotations() {
     <div className="font-light">These are the list of quotations you can edit, create monitor and reorder.</div>
     </div>
     <div>
-        <button className='w-[150px] h-[60px] bg-orange-500 text-white rounded-lg font-bold'>Create Quotation</button>
+        <button className='w-[150px] h-[60px] bg-orange-500 text-white rounded-lg px-1'>Create Quotation</button>
     </div>
     
 </div>
