@@ -1,29 +1,26 @@
-import { useState } from 'react'
-import SideBar from './components/SideBar'
-import AccountManagement from './components/AccountManagement'
-import AccountConfiguration from './components/AccountConfiguration'
-import DashboardAccount from './pages/DashboardAccount'
-import DashboardQuotation from './pages/DashboardQuotation'
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Home from "./pages/home"
+import Dashboard from "./pages/Dashboard"
+import Navbar from "./components/navbar"
+import Signin from "./pages/signin"
+import Signup from "./pages/signup"
+import Create from "./pages/Create"
 
 function App() {
-  const [page, setPage] = useState(1)
+
   return (
-    <>
-     <div className='min-h-screen w-full flex font-montoserrat'>
-      <div className="w-[15%] h-full">
-        <SideBar setPage={setPage} page={page}/>
-      </div>
-      <div className="w-[85%] h-full">
-      {
-        page == 1 ? 
-        <DashboardAccount />
-        :
-        <DashboardQuotation />
-      }  
-      </div>
-     </div>
-    </>
+    <div className="min-h-screen font-outfit w-full font-montoserrat bg-orange-50">
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/signin" element={<Signin />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/create" element={<Create />} />
+      </Routes>
+    </Router>
+  </div>
   )
 }
 
